@@ -10,11 +10,15 @@ def employee_details(name, emp_id, department, salary):
     )
 
 if __name__ == "__main__":
-    name = input("Enter Employee Name: ")
-    emp_id = input("Enter Employee ID: ")
-    department = input("Enter Department: ")
-    salary = input("Enter Salary: ")
+    if len(sys.argv) != 5:
+        print("Please provide employee details!")
+        print("Usage: py employee.py name id department salary")
+        sys.exit(1)
 
-    print("\nEmployee Details:")
+    name = sys.argv[1]
+    emp_id = sys.argv[2]
+    department = sys.argv[3]
+    salary = sys.argv[4]
+
     print(employee_details(name, emp_id, department, salary))
     print("usn:01fe25bca151")
